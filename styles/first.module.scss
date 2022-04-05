@@ -1,0 +1,60 @@
+@mixin btnBase($color: rgb(164, 212, 243)) {
+    height: 40px;
+    border-radius: 3px;
+    margin: auto 10px;
+    background-color: $color;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid rgb(44, 92, 159);
+    color: rgb(20, 47, 85);
+    font-weight: 600;
+}
+
+.first_page {
+    .btn {
+        &-section {
+            &-control {
+                display: flex;
+            }
+        }
+
+        &-list {
+            width: 120px;
+            height: 40px;
+            color: white;
+            text-align: center;
+            display: flex;
+            cursor: pointer;
+            border-radius: 6px;
+            background-color: rgb(44, 92, 159);
+
+            div {
+                margin: auto;
+            }
+
+            &.even {
+                background-color: rgb(67, 142, 200);
+            }
+        }
+
+        &-add {
+            @include btnBase();
+        }
+
+        &-remove {
+            @include btnBase();
+        }
+    }
+
+    .list {
+        &-wrap {
+            padding: 8px ;
+            max-height: 616px;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns:repeat(auto-fill , 120px);
+            grid-template-rows:repeat(auto-fill , 40px);
+            grid-auto-flow: column;
+        }
+    }
+}
